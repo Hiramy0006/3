@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interactive Script</title>
+
+</head>
+
+<body>
+
+
+
+<script>
+
+    var userName = prompt("Введіть ваше ім’я");
+
+    var userSurname = prompt("Введіть ваше прізвище");
+
+
+
+    document.write("<p style='font-size: 22px; font-style: italic; color: red;'>" + userSurname.toUpperCase() + " " + userName + "</p>");
+
+
+
+    var friendNames = [];
+
+    for (var i = 0; i < 3; i++) {
+
+        var friendName = prompt("Введіть ім’я друга " + (i + 1));
+
+        friendNames.push(friendName);
+
+    }
+
+
+
+    friendNames.sort();
+
+    document.write("<p>" + userName + ", у вас є хороші друзі: " + friendNames.join(", ") + ".</p>");
+
+
+
+    for (var attempt = 0; attempt < 2; attempt++) {
+
+        var randomFriend = friendNames[Math.floor(Math.random() * friendNames.length)];
+
+        var guess = prompt("З ким ви зустрінетесь ввечері? (Спроба " + (attempt + 1) + ")");
+
+        
+
+        if (guess === randomFriend) {
+
+            alert("Вітаємо з успішним вгадуванням! Переходимо на сторінку https://malevich-club.com/");
+
+            window.location.href = "https://malevich-club.com/";
+
+            break;
+
+        } else {
+
+            alert("Невірно. Спробуйте ще раз.");
+
+        }
+
+    }
+
+
+
+    alert("Ви не вгадали. Трошки підбадьоримо вас і перейдемо на сторінку https://lpnu.ua/");
+
+    window.location.href = "https://lpnu.ua/";
+
+</script>
+
+
+
+</body>
+
+</html>
+
